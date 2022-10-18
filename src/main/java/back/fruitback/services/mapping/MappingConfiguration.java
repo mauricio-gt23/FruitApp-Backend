@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 public class MappingConfiguration {
 
     @Bean
+    public ProductMapper productMapper() { return new ProductMapper(); }
+
+    @Bean
     public FruitMapper fruitMapper() { return new FruitMapper(); }
 
     @Bean

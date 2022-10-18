@@ -14,7 +14,6 @@ public class FruitBackApplication {
     public static void main(String[] args) {
         SpringApplication.run(FruitBackApplication.class, args);
     }
-
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
