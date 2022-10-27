@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface SaleDetailRepository extends JpaRepository<SaleDetail, SaleDetailKey> {
-
     List<SaleDetail> findBySaleId (Long saleId);
 }
