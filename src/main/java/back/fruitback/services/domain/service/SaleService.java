@@ -12,6 +12,7 @@ import java.util.List;
 public interface SaleService {
     List<Sale> getAll();
     SaleResource getById(Long saleId);
+    List<Sale> getByUserId(Long userId);
     Result<SaleResource, Notification> register(RegisterSaleRequest request);
     Result<SaleResource, Notification> edit(Long saleId, EditSaleRequest request);
 }

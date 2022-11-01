@@ -41,6 +41,16 @@ public class SaleController {
         }
     }
 
+    @GetMapping(params = "userId")
+    public ResponseEntity<Object> getByUserId(@RequestParam(value = "userId", required = false) Long userId, Pageable pageable) {
+        try {
+            Page<SaleResource> resources = saleMapper.modelListToPage(saleService.getByUserId(userId), pageable);
+            return ApiController.ok(resources);
+        } catch (Exception e) {
+            return ApiController.notFound();
+        }
+    }
+
     @PostMapping("")
     public ResponseEntity<Object> register(@RequestBody RegisterSaleRequest request) {
         try {

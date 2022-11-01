@@ -46,6 +46,11 @@ public class SaleServiceImpl implements SaleService {
     }
 
     @Override
+    public List<Sale> getByUserId(Long userId) {
+        return saleRepository.findByUserId(userId);
+    }
+
+    @Override
     public Result<SaleResource, Notification> register(RegisterSaleRequest request) {
         Notification notification = this.registerSaleValidator.validate(request);
         if (notification.hasErrors()) {
